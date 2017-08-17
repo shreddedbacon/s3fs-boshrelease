@@ -1,9 +1,12 @@
 # s3fs bosh release
 
-https://github.com/s3fs-fuse/s3fs-fuse
+A BOSH release to make use of s3fs.
 
-Can't mkdir in minio with s3fs: https://github.com/minio/minio/pull/4426
+### Notes
+* [s3fs](https://github.com/s3fs-fuse/s3fs-fuse)
+* Can't mkdir in minio with s3fs: https://github.com/minio/minio/pull/4426
 
+### Usage
 ```
 echo minio:minio123 > /var/vcap/jobs/s3fs/etc/password
 chmod 600 /var/vcap/jobs/s3fs/etc/password
