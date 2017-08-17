@@ -1,0 +1,12 @@
+---
+
+- type: replace
+  path: /instance_groups/name=s3fs/jobs/name=s3fs/properties?
+  value:
+    access_key: minio
+    secret_key: minio123
+    minio_url: http://10.244.0.22:9001/
+    endpoint: us-east-1
+    bucket_name: test
+    mount_path: /var/vcap/store/bucket
+    s3fs_options: "allow_other,use_path_request_style"

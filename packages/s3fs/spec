@@ -1,0 +1,7 @@
+---
+name: s3fs
+
+dependencies: []
+
+files:
+  - s3fs/s3fs-fuse-1.82.tar.gz

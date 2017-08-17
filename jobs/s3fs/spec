@@ -1,0 +1,29 @@
+---
+name: s3fs
+
+templates:
+  pre-start.erb: bin/pre-start
+  passwd.erb: etc/password
+
+packages:
+  - s3fs
+
+properties:
+  access_key:
+    description: s3 access key
+  secret_key:
+    description: s3 secret key
+  minio_url:
+    description: minio url if using minio
+    optional: true
+  s3_endpoint:
+    description:
+    default: us-east-1
+  bucket_name:
+    description: name of the bucket
+  mount_path:
+    description: where are we mounting the bucket
+    default: /var/vcap/store/bucket
+  s3fs_options:
+    description: options for s3fs, comma seperated no spaces
+    default: "allow_other,use_path_request_style"

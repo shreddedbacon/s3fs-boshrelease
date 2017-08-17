@@ -1,0 +1,18 @@
+set -e
+
+## hack for compiling
+apt-get install automake autotools-dev fuse g++ git libcurl4-gnutls-dev libfuse-dev libssl-dev libxml2-dev make pkg-config -y
+
+s3fs_archive=s3fs/s3fs-fuse-1.82.tar.gz
+
+echo "Extracting and compiling haproxy..."
+s3fs_dir=$(tar tf ${s3fs_archive} --exclude="*/*")
+tar xzf ${s3fs_archive}
+
+pushd ${s3fs_dir}
+  ./autogen.sh
+  ./configure --prefix=${BOSH_INSTALL_TARGET}
+  make
+  make install
+popd
+

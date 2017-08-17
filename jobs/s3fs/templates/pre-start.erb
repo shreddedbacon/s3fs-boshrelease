@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+chmod 600 /var/vcap/jobs/s3fs/etc/password
+
+mkdir -p <%= p('mount_path') %>
+
+<% if_p('minio_url') do |prop| %>minio="-o url=<%= prop %>"<% end %>
+endpoint="-o endpoint=<%= p('s3_endpoint') %>"
+bucket=<%= p('bucket_name') %>
+mountpath=<%= p('mount_path') %>
+options="-o <%= p('s3fs_options') %>"
+
+#/var/vcap/packages/s3fs/bin/s3fs $bucket $mountpath -o passwd_file=/var/vcap/jobs/s3fs/etc/password $minio $endpoint $options

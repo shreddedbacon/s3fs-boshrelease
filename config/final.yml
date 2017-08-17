@@ -1,0 +1,5 @@
+name: s3fs
+blobstore:
+  provider: local
+  options:
+    blobstore_path: /tmp/blobstore
