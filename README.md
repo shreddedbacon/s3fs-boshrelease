@@ -8,7 +8,6 @@ A BOSH release to make use of s3fs.
 
 ### Usage
 ```
-echo minio:minio123 > /var/vcap/jobs/s3fs/etc/password
 chmod 600 /var/vcap/jobs/s3fs/etc/password
 
 mkdir -p /var/vcap/store/bucket/
